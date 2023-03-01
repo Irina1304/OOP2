@@ -35,18 +35,18 @@ public class Main {
         System.out.println(man6.getInfo());
 
 
-        ArrayList<Man> arrayList = new ArrayList<>();
-        arrayList.sort(new Comparator<Man>() {
+        ArrayList<Man> list1 = new ArrayList<>();
+
+        list1.sort(new Comparator<Man>() {
             @Override
             public int compare(Man o1, Man o2) {
-                return o1.getSpeed() - o2.getSpeed();
+                return o2.getSpeed() - o1.getSpeed();
             }
         });
 
-        ArrayList<Man> list1 = new ArrayList<>();
 
         for (int i = 0; i < 10; i++) { // Создаем 10 случайных персонажей первой команды
-            Man.createArreyUnit1(list1, Man.setClass());
+            Man.createArreyUnit1(list1, Man.setClass1());
         }
 
         System.out.println("1 команда:");
@@ -58,8 +58,15 @@ public class Main {
 
         ArrayList<Man> list2 = new ArrayList<>();
 
+        list2.sort(new Comparator<Man>() {
+            @Override
+            public int compare(Man o1, Man o2) {
+                return o2.getSpeed() - o1.getSpeed();
+            }
+        });
+
         for (int i = 0; i < 10; i++) { // Создаем 10 случайных персонажей второй команды 
-            Man.createArreyUnit2(list2, Man.setClass());
+            Man.createArreyUnit2(list2, Man.setClass2());
         }
 
         System.out.println();
@@ -70,6 +77,9 @@ public class Main {
 
             System.out.print(list2.get(i).getInfo());
         }
+
+
+
 
 
 

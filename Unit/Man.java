@@ -46,11 +46,11 @@ public abstract class Man implements GameInterface {
         return String.valueOf(Names.values()[new Random().nextInt(Names.values().length-1)]);
     }
 
-    public static ClassesUnits setClass(){
-        return ClassesUnits.values()[new Random().nextInt(ClassesUnits.values().length -1)];
+    public static ClassesUnits1 setClass1(){
+        return ClassesUnits1.values()[new Random().nextInt(ClassesUnits1.values().length -1)];
     }
 
-    public static void createArreyUnit1(ArrayList<Man> arrayList, ClassesUnits classesUnits){
+    public static void createArreyUnit1(ArrayList<Man> arrayList, ClassesUnits1 classesUnits){
         switch (classesUnits){
             case Sniper -> arrayList.add(new Sniper(setName()));
             case Mag -> arrayList.add(new Mag(setName()));
@@ -59,7 +59,12 @@ public abstract class Man implements GameInterface {
         }
     } 
 
-    public static void createArreyUnit2(ArrayList<Man> arrayList, ClassesUnits classesUnits){
+    
+    public static ClassesUnits2 setClass2(){
+        return ClassesUnits2.values()[new Random().nextInt(ClassesUnits2.values().length -1)];
+    }
+
+    public static void createArreyUnit2(ArrayList<Man> arrayList, ClassesUnits2 classesUnits){
         switch (classesUnits){
             case Monk -> arrayList.add(new Monk(setName()));
             case Fermer -> arrayList.add(new Fermer(setName()));
@@ -69,8 +74,11 @@ public abstract class Man implements GameInterface {
     }
 
     public int getSpeed() {
-        return 0;
+        return speed;
     }
+
+
+
 
 
 
