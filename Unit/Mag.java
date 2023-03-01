@@ -3,7 +3,7 @@ package Unit;
 public class Mag extends Monk {
 
     public Mag(String name){
-        super(100, 100, 18, 6, 2, 22);
+        super(30, 30, -5, 17, 12, 1, 9, 0, 0);
         super.name = name;
     }
 

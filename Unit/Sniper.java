@@ -2,7 +2,7 @@ package Unit;
 public class Sniper extends Archer {
 
         public Sniper(String name){
-        super(100, 100, 18, 6, 2, 22, 22, 3);
+        super(15, 15, 10, 12, 10, 32, 32, 5, 9, 0, 0);
         super.name = name;
     }
 

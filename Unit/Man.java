@@ -12,15 +12,18 @@ public abstract class Man implements GameInterface {
     }
 
     private float hp;
-    int damage, att, def, maxHp;
+    int damage, att, def, maxHp, speed, x, y;
     public String name;
     
-    public Man(float hp, int maxHp, int damage, int att, int def) {
+    public Man(float hp, int maxHp, int damage, int att, int def, int speed, int x, int y) {
         this.hp = hp;
         this.maxHp = maxHp;
         this.damage = damage;
         this.att = att;
         this.def = def;
+        this.speed = speed;
+        this.x = x;
+        this.y = y;
         manCnt++;
     }
 
@@ -47,16 +50,26 @@ public abstract class Man implements GameInterface {
         return ClassesUnits.values()[new Random().nextInt(ClassesUnits.values().length -1)];
     }
 
-    public static void createArreyUnit(ArrayList<Man> arrayList, ClassesUnits classesUnits){
+    public static void createArreyUnit1(ArrayList<Man> arrayList, ClassesUnits classesUnits){
         switch (classesUnits){
             case Sniper -> arrayList.add(new Sniper(setName()));
             case Mag -> arrayList.add(new Mag(setName()));
-            case Monk -> arrayList.add(new Mag(setName()));
             case Fermer -> arrayList.add(new Fermer(setName()));
             case Bandit -> arrayList.add(new Bandit(setName()));
-            case Spearman -> arrayList.add(new Sniper(setName()));
+        }
+    } 
+
+    public static void createArreyUnit2(ArrayList<Man> arrayList, ClassesUnits classesUnits){
+        switch (classesUnits){
+            case Monk -> arrayList.add(new Monk(setName()));
+            case Fermer -> arrayList.add(new Fermer(setName()));
+            case Spearman -> arrayList.add(new Spearman(setName()));
             case XBowMan -> arrayList.add(new XBowMan(setName()));
         }
+    }
+
+    public int getSpeed() {
+        return 0;
     }
 
 

@@ -2,13 +2,13 @@ package Unit;
 
 public class Bandit extends Infantry {
 
-    public Bandit(float hp, int maxHp, int damage, int att, int def, int range) {
-        super(hp, maxHp, damage, att, def, range);
+    public Bandit(float hp, int maxHp, int damage, int att, int def, int speed, int x, int y) {
+        super(hp, maxHp, damage, att, def, speed, x, y);
         super.name = name;
     }
 
     public Bandit(String name){
-        super(150, 150, 12, 5, 3, 22);
+        super(10, 10, 4, 8, 3, 6, 0, 0);
         super.name = name;
     }
 

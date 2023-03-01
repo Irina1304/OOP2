@@ -6,8 +6,8 @@ public class Fermer extends Man {
     int cartridge;
     String name;
 
-    public Fermer(float hp, int maxHp, int damage, int att, int def, int cartridge) {
-        super(hp, maxHp, damage, att, def);
+    public Fermer(float hp, int maxHp, int damage, int att, int def, int cartridge, int speed, int x, int y) {
+        super(hp, maxHp, damage, att, def, speed, x, y);
         this.cartridge = cartridge;
     }
 
@@ -15,8 +15,8 @@ public class Fermer extends Man {
 
 
     public Fermer(String name){
-        super(50, 50, 2, 1, 1);
-        this.cartridge = 6;
+        super(1, 1, 1, 1, 1,3, 0, 0);
+        this.cartridge = 1;
         super.name = name;
     }
 

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Random;
 
 import Unit.XBowMan;
@@ -33,18 +34,44 @@ public class Main {
         System.out.println(man5.getInfo());
         System.out.println(man6.getInfo());
 
-        ArrayList<Man> list = new ArrayList<>();
 
-        for (int i = 0; i < 10; i++) { // Создаем 10 случайных персонажей
-            Man.createArreyUnit(list, Man.setClass());
+        ArrayList<Man> arrayList = new ArrayList<>();
+        arrayList.sort(new Comparator<Man>() {
+            @Override
+            public int compare(Man o1, Man o2) {
+                return o1.getSpeed() - o2.getSpeed();
+            }
+        });
+
+        ArrayList<Man> list1 = new ArrayList<>();
+
+        for (int i = 0; i < 10; i++) { // Создаем 10 случайных персонажей первой команды
+            Man.createArreyUnit1(list1, Man.setClass());
         }
 
-        System.out.println("10 случайных персонажей:");
+        System.out.println("1 команда:");
 
-        for (int i = 0; i < list.size(); i++) {
+        for (int i = 0; i < list1.size(); i++) {
 
-            System.out.print(list.get(i).getInfo());
+            System.out.print(list1.get(i).getInfo());
         }
+
+        ArrayList<Man> list2 = new ArrayList<>();
+
+        for (int i = 0; i < 10; i++) { // Создаем 10 случайных персонажей второй команды 
+            Man.createArreyUnit2(list2, Man.setClass());
+        }
+
+        System.out.println();
+
+        System.out.println("2 команда:");
+
+        for (int i = 0; i < list2.size(); i++) {
+
+            System.out.print(list2.get(i).getInfo());
+        }
+
+
 
         
     }
