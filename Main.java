@@ -76,6 +76,7 @@ public class Main {
         for (int i = 0; i < list2.size(); i++) {
 
             System.out.print(list2.get(i).getInfo());
+            
         }
 
 
